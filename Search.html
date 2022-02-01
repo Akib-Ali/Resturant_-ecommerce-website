@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style/index.css">
+    <style>
+         
+         
+        #strore_dish_here{
+            height: 200px;
+            width: 90%;
+            border:  2px solid red;
+           margin: auto;
+           display: grid;
+           grid-template-columns: repeat(8,1fr);
+        }
+        img{
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar_container"></div>
+
+
+
+    <div class="yourfood_left_right">
+
+        <div id="searchfood">
+
+            <div id="welcome_heading">Welcome in Food Republic</div>
+
+
+            <div id="hungry_heading"> Hungry</div>
+
+            <div id="orderfood"> Order food from favourite reasturant near you</div>
+
+
+
+
+
+
+
+
+            <input type="text" name="" id="findfood" placeholder="Enter Your Food">
+            <button id="dishbtn">Find Food</button>
+
+
+            <div id="cities_div">POPULAR CITIES IN INDIA</div>
+
+
+            <div class="citiesname">
+
+                <div class="black">Ahemdabad</div>
+
+                <div class="grey">Banglore</div>
+
+
+                <div class="black">Chenni</div>
+
+                <div class="grey">Delhi</div>
+
+
+                <div class="black">Gurgao</div>
+
+                <div class="grey">Hyderabad</div>
+
+
+                <div class="black">Kolkata</div>
+
+                <div class="grey">Mumbai</div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="rightimage">
+
+            <img src="https://images.livemint.com/img/2022/01/10/689x388/Rakesh_Raghunathan_Pongal_1641793646136_1641793653984.png"
+                alt="">
+        </div>
+    </div>
+
+
+
+    <div class="deliveryheading">
+
+        Food Delivery Resturant in Banglore
+    </div>
+
+
+
+    <div id="strore_dish_here"></div>
+
+
+
+</body>
+
+</html>
+
+<script type="module">
+
+
+
+
+    import navbar from "./component/navbar.js";
+    let navbar_container = document.getElementById("navbar_container")
+    navbar_container.innerHTML = navbar()
+
+
+    //finishnavbar
+
+    
+
+
+
+   
+
+    
+
+
+    document.getElementById("dishbtn").addEventListener("click", search_recii)
+    let showme=document.getElementById("strore_dish_here");
+    async function search_recii(){
+        try{ 
+            showme.innerText="";
+          let food = document.getElementById("findfood").value;
+            let response=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`);
+            var data=await response.json();
+            showmydata(data.meals);
+            console.log(data.meals);
+              
+        }
+        catch(erro){
+            console.log("error",erro);
+
+        }
+    }
+    function showmydata(data){
+      
+        data.map(({strMealThumb,strMeal})=>{
+            let div=document.createElement("div");
+            let image=document.createElement("img");
+            let categ=document.createElement("h3");
+
+            image.setAttribute("src",strMealThumb)
+            categ.innerText=strMeal;
+            div.append(image,categ)
+            showme.append(div);
+        });
+    }
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+  
+
+
+    
+    
+
+
+
+
+</script>

@@ -1,0 +1,442 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar{
+
+    display: flex;
+    /*border: solid black 1px;    */
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 60px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.1);
+          background-color: white;
+
+
+    
+}
+
+#option{
+    display: flex;
+    gap: 20px;
+}
+
+.food{
+    margin-top: 5px;
+    font-size: 23px;
+    
+}
+
+a{
+    color: Coral;
+    text-decoration: none;
+}
+
+a:hover{
+    color: darkkhaki;
+    text-decoration: underline;
+}
+
+
+  #FoodRepublic{
+    font-style: italic;
+    font-weight: bold;
+    
+}
+
+.head_para_button{
+
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    margin-top: 60px;
+    border:  2px solid red;
+    text-align: center;
+
+}
+
+.headindfood{
+    color: coral;
+   font-size: 50px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 80px;
+    
+      
+      
+}
+
+.food_para{
+
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#getquate{
+
+    margin-top: 20px;
+    background-color: coral;
+    height: 60px;
+    width: 200px;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+#getquate:hover{
+    background-color: darkkhaki;
+}
+
+
+
+
+/*   slider   */
+
+
+              
+    
+        
+.slider{    
+    overflow: hidden;
+    display: flex;
+    margin-top: 40px;
+}
+
+.slider .card{
+    background-color:white;
+    flex: 1;
+    margin:0 20px;
+    height: 550px;
+    width: 1150px;
+    margin: auto;
+    
+}
+
+.slider .card .img{
+    height: 550px;
+    width: 100%;
+    
+
+}
+
+.slider .card .img img{
+    height:100%;
+    width:100%;
+  border: blanchedalmond;
+  border-radius: 20px;
+    object-fit:cover;
+}
+
+
+
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 0px;
+    margin-top: -23px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.30s ease;
+}
+
+
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+    background-color: black;
+    
+}
+.owl-dot.active,
+.owl-dot:hover{
+background:grey;
+    
+}
+
+
+ /* finish slider */
+
+
+ .buttondiv{
+     margin-top: 20px;
+ }
+
+
+
+
+
+ /*   food dish  */
+
+
+
+ #updates{
+     margin: auto;
+     text-align: center;
+     font-size: 25px;
+     margin-top: 5px;
+     font-weight: bold;
+     font-style: italic;
+    
+ }
+
+
+ #Food_div{
+
+    display: grid;
+    grid-template-rows: repeat(5, 250px);
+    grid-template-columns: repeat(3,30%);
+    grid-gap: 30px;
+    width: 1250px;
+    margin: auto;
+    margin-top: 25px;
+    border: 2px solid grey;
+ }
+
+
+ #underline{
+     margin: auto;
+     margin-top: 40px;
+     width: 60px;
+     border: 1px solid black;
+ }
+
+
+ .dishpara{
+     color:Coral;
+     text-align: center;
+     margin-top: 20px;
+     font-size: 20px;
+ }
+
+
+ .dishimage {
+     width: 370px;
+     height: 200px;
+     transition: 0.5s all ease-in-out;
+
+ }
+
+
+ .dishimage:hover{
+    transform: scale(1.5);
+
+
+ }
+
+
+ .particul_dish_div{
+
+    height: 200px;
+    width: 380px;
+ /*   border: 2px solid blue;   */
+
+   /* padding: 10px;   */
+    box-shadow:
+         inset 0 -3em 3em rgba(0,0,0,0.1),
+               0 0  0 2px rgb(255,255,255),
+               0.3em 0.3em 1em rgba(0,0,0,0.3);
+ }
+
+
+
+
+
+
+ /* your choice page  */
+
+
+ .yourfood_left_right{
+
+    display: flex;
+    height: 350px;
+    width: 85%;
+    margin: auto;
+    margin-top: 35px;
+   /* border: 2px solid red;      */
+    padding-top: 10px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+
+
+
+    
+ }
+
+
+ #searchfood{
+
+    width: 55%;
+  /*  border: 2px solid grey;    */
+
+   /* box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);     */
+
+ }
+
+
+
+ #rightimage{
+
+    width: 50%;
+  /*  border: 2px solid black;     */
+    margin-left: 50px;
+ }
+
+
+ #rightimage img{
+     height: 350px;
+     width: 570px;
+ }
+
+
+ input{
+     height: 50px;
+     width: 350px;
+     margin-top: 30px;
+     border: 2px solid coral;
+ }
+
+
+ #searchfood button{
+     height: 54px;
+     width: 160px;
+     background-color: coral;
+     color: white;
+     margin-left: -5px;
+     cursor: pointer;
+ }
+
+
+
+ #welcome_heading{
+     font-size: 30px;
+     margin-top: 10px;
+     font-weight: 700;
+     color: coral;
+     
+ }
+
+
+
+ .deliveryheading{
+
+    margin-top: 70px;
+    margin-left: 100px;
+    font-size: 25px;
+    font-weight: 400;
+    color: coral;
+ }
+
+
+
+ #hungry_heading{
+
+    margin-top: 35px;
+    font-size: 30px;
+    font-weight: 600;
+ }
+
+
+
+ #orderfood{
+
+    margin-top: 10px;
+    font-size: 20px;
+    color: grey;
+ }
+
+
+
+ #cities_div{
+
+    margin-top: 30px;
+    font-size: 16px;
+    color: grey;
+ }
+
+
+
+ .citiesname{
+
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+ }
+
+
+
+ .black{
+     color: rgb(41, 38, 38);
+ }
+
+ .grey{
+
+    color: grey;
+ }
+
+
+
+
+
+
+
+
+
+ /*   recepie page  */
+
+
+ #Recepie{
+
+    display: flex;
+    width: 80%;
+    border: 2px solid red;
+    margin: auto;
+    margin-top: 90px;
+ }
+
+
+
+ .maindish{
+
+    width: 450px;
+    height: 450px;
+    border: 2px solid blue;
+ }
+
+
+
+ .recipimg{
+
+    height: 330px;
+    width: 450px;
+ }
+
+
+ .quantdiv{
+     height: 450px;
+     width: 530px;
+     border: 2px solid black;
+     margin-left: 100px;
+ }
+
+
+ .a{
+     font-size: 23px;
+     margin-top: 10px;
+     padding: 10px;
+     color: coral;
+ }

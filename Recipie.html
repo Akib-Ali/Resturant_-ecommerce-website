@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style/index.css">
+
+</head>
+<body>
+    <div id="navbar_container"></div>
+
+   <div id="Recepie"></div>
+</body>
+</html>
+
+
+
+<script type="module">
+
+
+
+    import navbar from "./component/navbar.js";
+
+    console.log("navbar:", navbar)
+
+    let navbar_container = document.getElementById("navbar_container")
+    navbar_container.innerHTML = navbar()
+
+
+
+
+async function getdish(){
+
+try{
+
+let res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+
+let dish = await res.json()
+
+//let dish = data.meals;
+
+appendrandomdish(dish.meals)
+
+console.log(dish.meals)
+
+}catch(err){
+
+    console.log("error:",err)
+}
+
+
+}
+
+
+
+
+ function appendrandomdish(elem){
+
+    elem.map(({strMealThumb,strMeal,strIngredient1,strIngredient2,strIngredient3,strIngredient4,strIngredient5,strIngredient6,strIngredient7,strIngredient8,strIngredient9,strIngredient10,strIngredient11,strIngredient12,strMeasure1,strMeasure2})=>{
+ 
+     let main_dish_div = document.createElement("div")
+     main_dish_div.setAttribute("class","maindish")
+
+
+     let dishimg = document.createElement("img")
+     dishimg.src = strMealThumb;
+     dishimg.setAttribute("class","recipimg")
+
+
+     let dishname = document.createElement("h3")
+    dishname.innerText = strMeal;
+
+
+    let heading = document.createElement("h3")              //right box 
+    heading.innerText = "Here I define complete recepie"
+
+
+
+
+    let quantdiv = document.createElement("div")
+    quantdiv.setAttribute("class","quantdiv")
+
+
+    let a = document.createElement("p")
+    a.setAttribute("class","a")
+    a.innerText = `${strIngredient1} : ${strMeasure1},   (2). ${strIngredient2} : ${strMeasure2}`
+
+
+
+     quantdiv.append(heading,a)
+     main_dish_div.append(dishimg,dishname)
+
+    document.getElementById("Recepie").append(main_dish_div,quantdiv)
+
+ }
+
+     ) }
+
+
+getdish()
+
+</script>

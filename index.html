@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style/index.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+</head>
+<body>
+    
+
+    <div id="navbar_container"></div>
+
+
+       
+        
+    
+
+
+
+    <div class = "head_para_button">
+
+   <h1 class="headindfood">Food Republic</h1>
+   <p class="food_para">Resturant in Faridabad</p>
+   <p class="food_para">Open today until 10:00 pm</p>
+
+   <button id="getquate">GET QUOTE</button>
+
+    </div>
+
+
+
+
+
+       <!---slidernews-->
+
+
+
+       <section class="team" id="team">
+   
+  
+        <div class="slider owl-carousel">
+  
+          
+          <div class="card">
+              <div class="img"><img src="
+
+                https://www.nicepng.com/png/detail/921-9214807_20-off-discount-with-free-drink-fast-food.png" alt=""></div>
+             
+          </div>
+          
+  
+  
+  
+           
+          <div class="card">
+              <div class="img"><img src="
+
+                https://www.sentosa.com.sg/-/media/sentosa/promolisting/promos/2021/dining-vouchers/fb-dining-voucher_1-to-23-jan-2022.png?revision=9795348e-91e1-47bb-a153-9719fd57e09b" alt=""></div>
+          
+          </div>
+          
+  
+           
+          <div class="card">
+              <div class="img"><img src="https://www.fountainbar.co.uk/wp-content/uploads/sites/27/2019/12/fountain-cover.png" alt=""></div>
+             
+          </div>
+          
+  
+          
+          <div class="card">
+              <div class="img"><img src="
+                https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRon5isqhC0yCjI_Mp71ztdtFBIngBlHoTo6A&usqp=CAU" alt=""></div>
+            
+          </div>
+          
+  
+           
+          <div class="card">
+              <div class="img"><img src="
+
+                https://cdn.crello.com/downloads/d58b6161-8149-4536-8a20-c74e15529dc0_1024.jpeg" alt=""></div>
+             
+          </div>
+
+
+
+
+          <div class="card">
+            <div class="img"><img src="
+
+                https://www.fountainbar.co.uk/wp-content/uploads/sites/27/2019/12/fountain-cover.png" alt=""></div>
+           
+        </div>
+    
+      
+  
+      </div>
+  </section>
+  
+
+  
+<!--finish slider-->  
+
+
+
+
+
+
+
+<!--all dishes-->
+
+
+<div id="underline"></div>
+<div id="updates">UPDATES</div>
+<div id="Food_div"></div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="index.js"></script>
+
+
+
+
+<script type="module">
+
+    import navbar from "./component/navbar.js"
+
+   // console.log("navbar:",navbar)
+
+let navbar_container = document.getElementById("navbar_container")
+
+navbar_container.innerHTML = navbar()
+
+
+
+
+
+
+//finishnavbar
+
+//let url = "https:www.themealdb.com/api/json/v1/1/categories.php"
+
+
+let Food_div = document.getElementById("Food_div")
+
+
+import {getData,appenddata} from "./scripts/showdata.js" ;
+
+//console.log("getdata, appenddata:" , getData,appenddata)
+
+let responce = getData(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+
+responce.then((res)=>{
+
+   // console.log("res:",res)
+
+    appenddata(res.categories,Food_div)
+})
+
+.catch((err)=>{
+
+  //  console.log("error:",err)
+})
+
+
+
+
+
+
+
+
+</script>
